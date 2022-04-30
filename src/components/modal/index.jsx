@@ -17,8 +17,6 @@ const Modal = ({ children = null, open = false }) => {
   );
 };
 
-Modal.Header = ModalHeader;
-
 Modal.Body = ModalBody;
 
 Modal.Footer = ModalFooter;
