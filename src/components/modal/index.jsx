@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import ReactDOM from "react-dom";
+import { getChildByType } from "react-nanny";
 
 const ModalBody = ({ children = null }) => {
   return <main>{children}</main>;
@@ -15,6 +16,9 @@ const Modal = ({
   title = "",
   onClose = () => {},
 }) => {
+  const body = getChildByType(children, ModalBody);
+  const footer = getChildByType(children, ModalFooter);
+
   if (!open) return null;
 
   return ReactDOM.createPortal(
@@ -39,6 +43,8 @@ const Modal = ({
             close
           </Typography>
         </Box>
+        {body}
+        {footer}
       </Box>
       <Box
         position="fixed"
