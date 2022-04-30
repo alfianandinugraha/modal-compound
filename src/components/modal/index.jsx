@@ -3,7 +3,11 @@ import ReactDOM from "react-dom";
 import { getChildByType } from "react-nanny";
 
 const ModalBody = ({ children = null }) => {
-  return <main>{children}</main>;
+  return (
+    <Box component="main" my="1rem">
+      {children}
+    </Box>
+  );
 };
 
 const ModalFooter = ({ children = null }) => {
@@ -39,7 +43,7 @@ const Modal = ({
           <Typography variant="h1" fontSize="1.5rem" fontWeight="bold">
             {title}
           </Typography>
-          <Typography variant="caption" onClick={onClose}>
+          <Typography variant="caption" onClick={onClose} color="lightgray">
             close
           </Typography>
         </Box>

@@ -9,12 +9,24 @@ function App() {
 
   return (
     <div>
-      <Modal open={isOpen} title="Simple Modal" onClose={toggle}>
+      <Modal open={isOpen} title="Login" onClose={toggle}>
         <Modal.Body>
-          <TextField placeholder="Masukkan nama" variant="standard" />
+          <TextField
+            placeholder="Email"
+            variant="standard"
+            sx={{ width: "100%" }}
+          />
+          <TextField
+            placeholder="Password"
+            variant="standard"
+            type="email"
+            sx={{ width: "100%", mt: "1rem" }}
+          />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="contained">Simpan</Button>
+          <Button onClick={toggle} variant="contained">
+            Login
+          </Button>
         </Modal.Footer>
       </Modal>
       <Button variant="contained" onClick={toggle}>
