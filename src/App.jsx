@@ -1,4 +1,4 @@
-import { Button } from "@mui/material";
+import { Button, TextField } from "@mui/material";
 import { useState } from "react";
 import Modal from "./components/modal";
 
@@ -9,7 +9,14 @@ function App() {
 
   return (
     <div>
-      <Modal open={isOpen} title="Simple Modal" onClose={toggle} />
+      <Modal open={isOpen} title="Simple Modal" onClose={toggle}>
+        <Modal.Body>
+          <TextField placeholder="Masukkan nama" variant="standard" />
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="contained">Simpan</Button>
+        </Modal.Footer>
+      </Modal>
       <Button variant="contained" onClick={toggle}>
         Open Modal
       </Button>
